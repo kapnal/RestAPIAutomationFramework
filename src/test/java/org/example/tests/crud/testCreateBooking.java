@@ -2,6 +2,7 @@ package org.example.tests.crud;
 
 import org.example.base.BaseTest;
 import org.example.endpoints.APIConstants;
+import org.example.pojos.Booking;
 import org.example.pojos.BookingRespons;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
@@ -37,7 +38,7 @@ public class testCreateBooking extends BaseTest {
         // Assert J
         assertThat(bookingRespons.getBookingid()).isNotNull();
         assertThat(bookingRespons.getBooking().getFirstname()).isNotNull().isNotBlank();
-       // assertThat(bookingRespons.getBooking().getFirstname()).isEqualTo("Pramod");
+      // assertThat(bookingRespons.getBooking().getFirstname()).isEqualTo();
 
         // TestNG Assertions
         assertActions.verifyStatusCode(response);
