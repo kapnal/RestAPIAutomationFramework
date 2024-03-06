@@ -45,5 +45,18 @@ public class testCreateBooking extends BaseTest {
 
     }
 
+    @Test
+    @Owner("Kapil")
+    @Severity(SeverityLevel.NORMAL)
+    @Description("TC#2 - Verify that the Booking not created when Payload is missing")
+    public void testCreateBookingNegative() {
+        requestSpecification.basePath(APIConstants.CREATE_UPDATE_BOOKING_URL);
+        response = RestAssured.given().spec(requestSpecification)
+                .when().body("{}").post();
+        validatableResponse = response.then().log().all();
+        // TestNG Assertions
+        assertActions.verifyStatusCodeInvalidReq(response);
+    }
+
 
 }

@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="RestAPIAutomationFramework">
         <classes>
-            <class name="org.example.tests.crud.testCreateBooking">
+            <class name="org.example.tests.integration.TCIntegration1">
             </class>
         </classes>
     </test>
