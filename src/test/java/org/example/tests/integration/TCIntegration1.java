@@ -21,6 +21,7 @@ public class TCIntegration1 extends BaseTest  {
     // Delete the Booking
     // How to pass the data to one testcase to another
 
+
     @Test(groups = "integration", priority = 1)
     @Owner("Kapil")
     @Description("TC#INT1 - Step 1. Verify that the Booking can be Created")
@@ -51,7 +52,6 @@ public class TCIntegration1 extends BaseTest  {
     @Description("TC#INT1 - Step 3. Verify Updated Booking by ID")
     public void testUpdateBookingByID(ITestContext iTestContext) {
         // PUT/ PATCH
-
         Integer bookingId = (Integer) iTestContext.getAttribute("bookingid");
         String token = (String) iTestContext.getAttribute("token");
         System.out.println("Booking Id Generated -> " + bookingId);
@@ -74,9 +74,11 @@ public class TCIntegration1 extends BaseTest  {
         String token = (String) iTestContext.getAttribute("token");
         // DELETE Req.
         System.out.println(iTestContext.getAttribute("bookingid"));
+
         requestSpecification.basePath(APIConstants.CREATE_UPDATE_BOOKING_URL + "/" + bookingId).cookie("token",token);
         validatableResponse = RestAssured.given().spec(requestSpecification)
                 .when().delete().then().log().all();
+
         validatableResponse.statusCode(201);
     }
 
