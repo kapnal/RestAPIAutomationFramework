@@ -49,7 +49,7 @@ public class TCIntegration1 extends BaseTest  {
 
     @Test(groups = "integration", priority = 3)
     @Owner("Promode")
-    @Description("TC#INT1 - Step 3. Verify Updated Booking by ID")
+    @Description("TC#INT1 - Step 3 Verify Updated Booking by ID")
     public void testUpdateBookingByID(ITestContext iTestContext) {
         // PUT/ PATCH
         Integer bookingId = (Integer) iTestContext.getAttribute("bookingid");
